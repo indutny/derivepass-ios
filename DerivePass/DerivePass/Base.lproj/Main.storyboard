@@ -64,12 +64,22 @@
                                 <rect key="frame" x="178" y="323" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
+                            <button opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3f-yA-TUj">
+                                <rect key="frame" x="16" y="377" width="343" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="onCancelConfirm:" destination="5XO-FJ-yEr" eventType="primaryActionTriggered" id="gOQ-P0-hcT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                     </view>
                     <navigationItem key="navigationItem" id="XgT-AA-QSd"/>
                     <connections>
+                        <outlet property="cancelConfirmButton" destination="z3f-yA-TUj" id="JH5-Uu-z5I"/>
                         <outlet property="emojiConfirmationLabel" destination="Nfi-oC-u63" id="syv-ti-vpC"/>
                         <outlet property="emojiLabel" destination="fCA-Z2-oCR" id="aw1-Bb-hlF"/>
                         <outlet property="masterPassword" destination="yZF-r2-Cnq" id="LrD-Qr-GHs"/>
@@ -90,7 +100,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="682.5" y="257.5"/>
+            <point key="canvasLocation" x="682.39999999999998" y="256.82158920539734"/>
         </scene>
         <!--Applications-->
         <scene sceneID="vmQ-iI-gSR">

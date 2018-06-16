@@ -24,6 +24,7 @@ static NSString* const kConfirmPlaceholder = @"Confirm New Password";
 @property(weak, nonatomic) IBOutlet UITextField* masterPassword;
 @property(weak, nonatomic) IBOutlet UILabel* emojiLabel;
 @property(weak, nonatomic) IBOutlet UILabel* emojiConfirmationLabel;
+@property(weak, nonatomic) IBOutlet UIButton* cancelConfirmButton;
 @property(weak, nonatomic) IBOutlet UIActivityIndicatorView* spinner;
 
 @property(strong) ApplicationDataController* dataController;
@@ -223,20 +224,32 @@ static NSString* const kConfirmPlaceholder = @"Confirm New Password";
 
   UILabel* original = self.emojiLabel;
   UILabel* conf = self.emojiConfirmationLabel;
+  UIButton* cancelConf = self.cancelConfirmButton;
 
   self.masterPassword.text = confirming_;
   self.masterPassword.placeholder = kMasterPlaceholder;
   self.masterPassword.returnKeyType = UIReturnKeyDone;
   confirming_ = nil;
 
+  [cancelConf setUserInteractionEnabled:NO];
+
   [UIView animateWithDuration:0.3
       animations:^{
         conf.center = original.center;
         conf.alpha = 0.0;
+        cancelConf.alpha = 0.0;
       }
       completion:^(BOOL finished) {
         if (completion != nil) completion();
       }];
+}
+
+
+- (IBAction)onCancelConfirm:(id)sender {
+  if (confirming_) {
+    [self hideConfirmation:nil];
+    return;
+  }
 }
 
 
@@ -248,7 +261,7 @@ static NSString* const kConfirmPlaceholder = @"Confirm New Password";
 
   UILabel* original = self.emojiLabel;
   UILabel* conf = self.emojiConfirmationLabel;
-
+  UIButton* cancelConf = self.cancelConfirmButton;
 
   // No transition when master password is empty
   if (self.masterPassword.text.length == 0) return;
@@ -260,12 +273,15 @@ static NSString* const kConfirmPlaceholder = @"Confirm New Password";
   self.masterPassword.placeholder = kConfirmPlaceholder;
   self.masterPassword.returnKeyType = UIReturnKeyNext;
 
+  [cancelConf setUserInteractionEnabled:YES];
+
   conf.text = kDefaultEmoji;
   [UIView animateWithDuration:0.3
                    animations:^() {
                      conf.center =
                          CGPointMake(conf.center.x, conf.center.y + conf.frame.size.height * 1.2);
                      conf.alpha = 1.0;
+                     cancelConf.alpha = 1.0;
                    }];
 }
 
