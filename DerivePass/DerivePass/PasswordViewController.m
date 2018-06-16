@@ -17,7 +17,7 @@
 #import <dispatch/dispatch.h>  // dispatch_queue_t
 
 static NSString* const kMasterPlaceholder = @"Master Password";
-static NSString* const kConfirmPlaceholder = @"Confirm Password";
+static NSString* const kConfirmPlaceholder = @"Confirm New Password";
 
 @interface PasswordViewController ()
 
