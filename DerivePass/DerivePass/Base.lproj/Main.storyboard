@@ -34,11 +34,11 @@
                                 </connections>
                             </textField>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iCm-nf-vBp">
-                                <rect key="frame" x="16" y="20" width="343" height="261.5"/>
+                                <rect key="frame" x="16" y="20" width="343" height="261"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="😬" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nfi-oC-u63" userLabel="Emoji Confirmation Label">
-                                        <rect key="frame" x="9" y="99" width="325" height="63"/>
+                                        <rect key="frame" x="0.0" y="99" width="343" height="63"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
@@ -46,7 +46,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="😬" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCA-Z2-oCR">
-                                        <rect key="frame" x="7.5" y="98.5" width="325" height="63"/>
+                                        <rect key="frame" x="0.0" y="98" width="343" height="63"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
@@ -61,15 +61,25 @@
                                 </connections>
                             </view>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="oYr-VE-Zic">
-                                <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                                <rect key="frame" x="178" y="323" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
+                            <button opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3f-yA-TUj">
+                                <rect key="frame" x="16" y="377" width="343" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="onCancelConfirm:" destination="5XO-FJ-yEr" eventType="primaryActionTriggered" id="gOQ-P0-hcT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                     </view>
                     <navigationItem key="navigationItem" id="XgT-AA-QSd"/>
                     <connections>
+                        <outlet property="cancelConfirmButton" destination="z3f-yA-TUj" id="JH5-Uu-z5I"/>
                         <outlet property="emojiConfirmationLabel" destination="Nfi-oC-u63" id="syv-ti-vpC"/>
                         <outlet property="emojiLabel" destination="fCA-Z2-oCR" id="aw1-Bb-hlF"/>
                         <outlet property="masterPassword" destination="yZF-r2-Cnq" id="LrD-Qr-GHs"/>
@@ -90,7 +100,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="682.5" y="257.5"/>
+            <point key="canvasLocation" x="682.39999999999998" y="256.82158920539734"/>
         </scene>
         <!--Applications-->
         <scene sceneID="vmQ-iI-gSR">
@@ -178,7 +188,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHq-VH-A1B">
-                                <rect key="frame" x="18" y="25.5" width="339" height="634"/>
+                                <rect key="frame" x="18" y="26" width="339" height="634"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
@@ -210,7 +220,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CNF-2S-FTG">
-                                <rect key="frame" x="58.5" y="311.5" width="258" height="44"/>
+                                <rect key="frame" x="59" y="312" width="258" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <state key="normal" title="Start using application"/>
@@ -275,7 +285,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="gmail.com" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qGP-LD-J1s">
-                                                    <rect key="frame" x="138.5" y="0.0" width="228.5" height="60"/>
+                                                    <rect key="frame" x="138" y="0.0" width="229" height="60"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -285,7 +295,7 @@
                                                     </connections>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Domain" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGZ-tI-l0G">
-                                                    <rect key="frame" x="16.5" y="0.0" width="105" height="60"/>
+                                                    <rect key="frame" x="17" y="0.0" width="105" height="60"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                     <nil key="textColor"/>
